@@ -12,5 +12,29 @@ namespace QuanlyKhohang.BUS
 {
     class ChitietPhieunhap_BUS
     {
+        public TextBox txtTotal { get; set; }
+        public DataGridView sanPham { get; set; }
+        public DataGridView chiTiet { get; set; }
+        public void Insert_Update(int pnid, int spid, int soluong)
+        {
+            DataAccess.NonQuery("Chitietphieunhap_insert_update",
+                new SqlParameter("@pnid", pnid),
+                new SqlParameter("@spid", spid),
+                new SqlParameter("@soluong", soluong));
+        }
+        public void Update(int pnid, int spid, int soluong)
+        {
+            DataAccess.NonQuery("Chitietphieunhap_update",
+                new SqlParameter("@pnid", pnid),
+                new SqlParameter("@spid", spid),
+                new SqlParameter("@soluong", soluong));
+        }
+        public void Delete(int pnid, int spid)
+        {
+            DataAccess.NonQuery("Chitietphieunhap_delete",
+                new SqlParameter("@pnid", pnid),
+                new SqlParameter("@spid", spid));
+        }
     }
+
 }
