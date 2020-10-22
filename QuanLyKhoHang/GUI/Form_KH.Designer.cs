@@ -101,6 +101,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(486, 228);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Form_KH
             // 
@@ -118,6 +119,7 @@
             this.Name = "Form_KH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn khách hàng";
+            this.Load += new System.EventHandler(this.Form_KH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
