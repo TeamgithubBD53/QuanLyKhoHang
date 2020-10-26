@@ -125,6 +125,7 @@
             this.Name = "Form_NCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn nhà cung cấp";
+            this.Load += new System.EventHandler(this.Form_NCC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

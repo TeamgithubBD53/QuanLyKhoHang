@@ -20,8 +20,13 @@ namespace GUI
         {
             InitializeComponent();
         }
-       
+        public delegate void GetData(string id, string name);
+        public GetData Getmydata;
 
-
+        private void Form_NCC_Load(object sender, EventArgs e)
+        {
+            DataTable dt = DataAccess.Query("select * from Nhacungcap");
+            dataGridView1.DataSource = dt;
+        }
     }
 }
