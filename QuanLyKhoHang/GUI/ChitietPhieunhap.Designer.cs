@@ -136,6 +136,7 @@
             this.btnOk.TabIndex = 3;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // txtSoluong
             // 
@@ -273,6 +274,7 @@
             this.Name = "Chitietphieunhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết phiếu nhập";
+            this.Load += new System.EventHandler(this.Chitietphieunhap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
