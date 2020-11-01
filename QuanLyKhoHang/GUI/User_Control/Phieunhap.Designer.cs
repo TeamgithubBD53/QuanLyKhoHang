@@ -75,6 +75,7 @@
             this.btnHuy.TabIndex = 20;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // txtTongsoluong
             // 
@@ -144,6 +145,7 @@
             this.btnXoa.TabIndex = 18;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -155,6 +157,7 @@
             this.btnSua.TabIndex = 17;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -166,6 +169,7 @@
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label3
             // 
@@ -194,6 +198,7 @@
             this.btnLuu.TabIndex = 19;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtNCC
             // 
@@ -213,6 +218,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(687, 298);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -238,6 +244,7 @@
             this.txtTKNhanvien.Name = "txtTKNhanvien";
             this.txtTKNhanvien.Size = new System.Drawing.Size(143, 24);
             this.txtTKNhanvien.TabIndex = 7;
+            this.txtTKNhanvien.TextChanged += new System.EventHandler(this.text_changed);
             // 
             // label8
             // 
@@ -279,6 +286,7 @@
             this.txtTKTenNCC.Name = "txtTKTenNCC";
             this.txtTKTenNCC.Size = new System.Drawing.Size(143, 24);
             this.txtTKTenNCC.TabIndex = 5;
+            this.txtTKTenNCC.TextChanged += new System.EventHandler(this.text_changed);
             // 
             // groupBox1
             // 
@@ -341,6 +349,7 @@
             this.btnNhanvien.Text = "...";
             this.btnNhanvien.UseVisualStyleBackColor = true;
             this.btnNhanvien.Visible = false;
+            this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
             // 
             // btnNCC
             // 
@@ -351,6 +360,7 @@
             this.btnNCC.Text = "...";
             this.btnNCC.UseVisualStyleBackColor = true;
             this.btnNCC.Visible = false;
+            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
             // 
             // btnChitietPX
             // 
@@ -362,6 +372,7 @@
             this.btnChitietPX.TabIndex = 21;
             this.btnChitietPX.Text = "Chi tiết phiếu nhập";
             this.btnChitietPX.UseVisualStyleBackColor = false;
+            this.btnChitietPX.Click += new System.EventHandler(this.btnChitietPN_Click);
             // 
             // dtPNgaynhap
             // 
@@ -386,6 +397,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Phieunhap";
             this.Size = new System.Drawing.Size(869, 541);
+            this.Load += new System.EventHandler(this.Phieunhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
