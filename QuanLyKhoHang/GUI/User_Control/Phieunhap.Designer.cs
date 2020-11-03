@@ -79,7 +79,7 @@
             // 
             // txtTongsoluong
             // 
-            this.txtTongsoluong.Location = new System.Drawing.Point(745, 29);
+            this.txtTongsoluong.Location = new System.Drawing.Point(764, 26);
             this.txtTongsoluong.Name = "txtTongsoluong";
             this.txtTongsoluong.ReadOnly = true;
             this.txtTongsoluong.Size = new System.Drawing.Size(83, 24);
@@ -121,7 +121,7 @@
             // 
             // txtNhanvien
             // 
-            this.txtNhanvien.Location = new System.Drawing.Point(433, 29);
+            this.txtNhanvien.Location = new System.Drawing.Point(433, 33);
             this.txtNhanvien.Name = "txtNhanvien";
             this.txtNhanvien.Size = new System.Drawing.Size(143, 24);
             this.txtNhanvien.TabIndex = 6;
@@ -129,7 +129,7 @@
             // diachi
             // 
             this.diachi.AutoSize = true;
-            this.diachi.Location = new System.Drawing.Point(334, 31);
+            this.diachi.Location = new System.Drawing.Point(350, 34);
             this.diachi.Name = "diachi";
             this.diachi.Size = new System.Drawing.Size(77, 18);
             this.diachi.TabIndex = 5;
@@ -202,7 +202,7 @@
             // 
             // txtNCC
             // 
-            this.txtNCC.Location = new System.Drawing.Point(137, 31);
+            this.txtNCC.Location = new System.Drawing.Point(136, 33);
             this.txtNCC.Name = "txtNCC";
             this.txtNCC.Size = new System.Drawing.Size(143, 24);
             this.txtNCC.TabIndex = 1;
@@ -268,6 +268,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtPNID);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtTKNhanvien);
             this.groupBox2.Controls.Add(this.label8);
@@ -290,7 +291,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtPNID);
             this.groupBox1.Controls.Add(this.txtNVID);
             this.groupBox1.Controls.Add(this.txtNCCID);
             this.groupBox1.Controls.Add(this.btnNhanvien);
@@ -318,7 +318,7 @@
             // 
             // txtPNID
             // 
-            this.txtPNID.Location = new System.Drawing.Point(433, 110);
+            this.txtPNID.Location = new System.Drawing.Point(654, 28);
             this.txtPNID.Name = "txtPNID";
             this.txtPNID.Size = new System.Drawing.Size(143, 24);
             this.txtPNID.TabIndex = 26;
@@ -326,7 +326,7 @@
             // 
             // txtNVID
             // 
-            this.txtNVID.Location = new System.Drawing.Point(433, 2);
+            this.txtNVID.Location = new System.Drawing.Point(433, 3);
             this.txtNVID.Name = "txtNVID";
             this.txtNVID.Size = new System.Drawing.Size(143, 24);
             this.txtNVID.TabIndex = 25;
@@ -334,7 +334,7 @@
             // 
             // txtNCCID
             // 
-            this.txtNCCID.Location = new System.Drawing.Point(136, 2);
+            this.txtNCCID.Location = new System.Drawing.Point(136, 0);
             this.txtNCCID.Name = "txtNCCID";
             this.txtNCCID.Size = new System.Drawing.Size(143, 24);
             this.txtNCCID.TabIndex = 24;
@@ -342,23 +342,26 @@
             // 
             // btnNhanvien
             // 
-            this.btnNhanvien.Location = new System.Drawing.Point(582, 29);
+            this.btnNhanvien.BackColor = System.Drawing.Color.Red;
+            this.btnNhanvien.Location = new System.Drawing.Point(582, 35);
             this.btnNhanvien.Name = "btnNhanvien";
             this.btnNhanvien.Size = new System.Drawing.Size(27, 21);
             this.btnNhanvien.TabIndex = 23;
             this.btnNhanvien.Text = "...";
-            this.btnNhanvien.UseVisualStyleBackColor = true;
+            this.btnNhanvien.UseVisualStyleBackColor = false;
             this.btnNhanvien.Visible = false;
             this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
             // 
             // btnNCC
             // 
-            this.btnNCC.Location = new System.Drawing.Point(286, 29);
+            this.btnNCC.BackColor = System.Drawing.Color.Red;
+            this.btnNCC.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNCC.Location = new System.Drawing.Point(285, 36);
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Size = new System.Drawing.Size(27, 21);
             this.btnNCC.TabIndex = 22;
             this.btnNCC.Text = "...";
-            this.btnNCC.UseVisualStyleBackColor = true;
+            this.btnNCC.UseVisualStyleBackColor = false;
             this.btnNCC.Visible = false;
             this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
             // 
