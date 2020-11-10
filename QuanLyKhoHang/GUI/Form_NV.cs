@@ -17,7 +17,35 @@ namespace QuanlyKhohang.GUI
         {
             InitializeComponent();
         }
-      
+        private void Form_NV_Load_1(object sender, EventArgs e)
+        {
+            DataTable dt = DataAccess.Query("select * from Nhanvien");
+            dataGridView1.DataSource = dt;
+
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            lblTen.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+        }
+        public delegate void GetData(string id, string name);
+        public GetData Getmydata;
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.Text == "OK")
+            {
+                if (lblID.Text == "")
+                    MessageBox.Show("Chọn một nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    Getmydata(lblID.Text, lblTen.Text);
+                    this.Hide();
+                }
+            }
+            else
+                Close();
+        }
 
 
     }

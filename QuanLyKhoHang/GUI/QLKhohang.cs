@@ -43,5 +43,10 @@ namespace QuanlyKhohang
             else if (ts.Text == "Thoát")
                 Application.Exit();
         }
+
+        private void QLKhohang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
