@@ -78,8 +78,87 @@ namespace QuanlyKhohang.GUI
             txtTKDiachi.Enabled = false;
             txtTKTenNCC.Enabled = false;
         }
-        #endregion
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (txtNCCID.Text == "")
+                MessageBox.Show("Chọn một nhà cung cấp để sửa.", "Lỗi");
+            else
+            {
+                luu = 2;
+                txtNCCID.Focus();
+                btnSua.BackColor = Color.LightBlue;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                btnThem.Enabled = false;
+                txtTKDiachi.Enabled = false;
+                txtTKTenNCC.Enabled = false;
+            }
+        }
 
-       
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            luu = 0;
+            if (txtNCCID.Text == "")
+                MessageBox.Show("Chọn một nhà cung cấp để xóa.", "Lỗi");
+            else
+            {
+                int res = ncc.Delete(int.Parse(txtNCCID.Text));
+                if (res == 1)
+                    MessageBox.Show("Nhà cung cấp này đã tồn tại trong một phiếu nhập");
+                else
+                {
+
+                    DialogResult dr;
+                    dr = MessageBox.Show("Xóa dữ liệu nhà cung cấp", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.OK)
+                    {
+                        ncc.Delete(int.Parse(txtNCCID.Text));
+                        MessageBox.Show("Xóa thành công");
+                        ncc.ViewAll();
+
+                    }
+                }
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Start();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (luu == 1)
+            {
+                if (txtTenNCC.Text == "" | txtDiachi.Text == "" | txtDienthoai.Text == "" | txtEmail.Text == "")
+                    MessageBox.Show("Nhập đầy đủ thông tin sản phẩm.", "Lỗi");
+                else
+                {
+                    ncc.Add(txtTenNCC.Text, txtDiachi.Text, txtDienthoai.Text, txtEmail.Text);
+                    MessageBox.Show("Thêm thành công");
+                    ncc.ViewAll();
+                    Start();
+                }
+            }
+            else if (luu == 2)
+            {
+                if (txtTenNCC.Text == "" | txtDiachi.Text == "" | txtDienthoai.Text == "" | txtEmail.Text == "")
+                    MessageBox.Show("Nhập đầy đủ thông tin nhà cung cấp.", "Lỗi");
+                else
+                {
+                    ncc.Update(int.Parse(txtNCCID.Text), txtTenNCC.Text, txtDiachi.Text, txtDienthoai.Text, txtEmail.Text);
+                    MessageBox.Show("Sửa thành công");
+                    ncc.ViewAll();
+                    Start();
+                }
+            }
+        }
+        #endregion
+        private void Text_Changed(object sender, EventArgs e)
+        {
+            ncc.timKiem(txtTKTenNCC.Text, txtTKDiachi.Text);
+        }
+
+
     }
 }
