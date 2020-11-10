@@ -20,10 +20,6 @@ namespace QuanlyKhohang.GUI
             InitializeComponent();
             sp.bangDuLieu = dataGridView1;
         }
-        private void Sanpham_Load(object sender, EventArgs e)
-        {
-            sp.ViewAll();
-        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -167,6 +163,9 @@ namespace QuanlyKhohang.GUI
             sp.timKiem(txtTKTenSP.Text, txtTKNCC.Text);
         }
 
-
+        private void Sanpham_Load_1(object sender, EventArgs e)
+        {
+            sp.ViewAll();
+        }
     }
 }
