@@ -45,5 +45,12 @@ namespace QuanlyKhohang.BUS
                 new SqlParameter("@dienthoai", dienthoai),
                 new SqlParameter("@email", email));
         }
+        public int Delete(int id)
+        {
+            DataTable dt = DataAccess.Query("Nhacungcap_delete",
+                new SqlParameter("@id", id));
+            int res = int.Parse(dt.Rows[0][0].ToString());
+            return res;
+        }
     }
 }
