@@ -36,5 +36,14 @@ namespace QuanlyKhohang.BUS
                new SqlParameter("@dienthoai", dienthoai),
                new SqlParameter("@email", email));
         }
+        public void Update(int id,int ten,string diachi,string dienthoai,string email)
+        {
+            DataAccess.NonQuery("Nhacungcap_update",
+                new SqlParameter("@id", id),
+                new SqlParameter("@ten", ten),
+                new SqlParameter("diachi", diachi),
+                new SqlParameter("@dienthoai", dienthoai),
+                new SqlParameter("@email", email));
+        }
     }
 }
