@@ -7,6 +7,26 @@ namespace QuanlyKhohang.BUS
 {
     class Nhacungcap_BUS
     {
-        
+        #region Control
+        public DataGridView bangDuLieu { get; set; }
+        public DataView dv { get; set; }
+        #endregion
+        public void ViewAll()
+        {
+            string sql = string.Format("select * from Nhacungcap");
+            DataTable dt = DataAccess.Query(sql);
+            dv = new DataView(dt);
+            bangDuLieu.DataSource = dt;
+            bangDuLieu.Columns[0].HeaderText = "ID";
+            bangDuLieu.Columns[1].HeaderText = "Tên NCC";
+            bangDuLieu.Columns[2].HeaderText = "Địa chỉ";
+            bangDuLieu.Columns[3].HeaderText = "Điện thoại";
+            bangDuLieu.Columns[4].HeaderText = "Email";
+        }
+        public void timKiem(string tenncc, string diachi)
+        {
+            dv.RowFilter = "[TenNCC] like '%" + tenncc + "%' and [Diachi] like '%" + diachi + "%'";
+            bangDuLieu.DataSource = dv;
+        }
     }
 }
