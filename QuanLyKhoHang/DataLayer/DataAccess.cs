@@ -10,7 +10,7 @@ namespace QuanlyKhohang.DataLayer
 {
     public class DataAccess
     {
-        static public string _con = @"Data Source=HL-NGU-MUOI;database=QuanLyKhoHang;Integrated security=true;";
+        static public string _con = @"Data Source=.\SQLEXPRESS;database=QuanLyKhoHang;Integrated security=true;";
 
         static SqlConnection con = new SqlConnection(_con);
         public static string ConnectionString
