@@ -35,5 +35,13 @@ namespace QuanlyKhohang.BUS
             dv.RowFilter = "[TenKH] like '%" + tenkh + "%' and [Diachi] like '%" + diachi + "%'";
             bangDuLieu.DataSource = dv;
         }
+        public void Add(string ten,string diachi,string dienthoai,string email)
+        {
+            DataAccess.NonQuery("Khachhang_insert",
+                new SqlParameter("@ten", ten),
+                new SqlParameter("@diachi", diachi),
+                new SqlParameter("@dienthoai", dienthoai),
+                new SqlParameter("@email", email));
+        }
     }
 }
