@@ -318,6 +318,7 @@
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Khachhang";
             this.Size = new System.Drawing.Size(869, 541);
+            this.Load += new System.EventHandler(this.Khachhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
