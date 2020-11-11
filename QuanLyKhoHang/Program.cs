@@ -17,7 +17,11 @@ namespace QuanlyKhohang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
+            Application.Run(new Form_NCC());
+=======
             Application.Run(new QLKhohang());
+>>>>>>> 0a9849b0908fe0b32430a1618ee65a57aa89568a
         }
     }
 }
