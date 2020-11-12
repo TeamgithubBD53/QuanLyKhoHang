@@ -231,6 +231,7 @@
             this.txtTKNCC.Name = "txtTKNCC";
             this.txtTKNCC.Size = new System.Drawing.Size(143, 24);
             this.txtTKNCC.TabIndex = 8;
+            this.txtTKNCC.TextChanged += new System.EventHandler(this.txtTKNCC_TextChanged);
             // 
             // label9
             // 
@@ -256,6 +257,7 @@
             this.txtTKTenSP.Name = "txtTKTenSP";
             this.txtTKTenSP.Size = new System.Drawing.Size(143, 24);
             this.txtTKTenSP.TabIndex = 5;
+            this.txtTKTenSP.TextChanged += new System.EventHandler(this.txtTKTenSP_TextChanged);
             // 
             // groupBox3
             // 

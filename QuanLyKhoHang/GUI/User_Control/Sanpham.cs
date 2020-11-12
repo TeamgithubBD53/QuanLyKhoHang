@@ -158,14 +158,24 @@ namespace QuanlyKhohang.GUI
         }
         #endregion
 
-        private void timKiem(object sender, EventArgs e)
-        {
-            sp.timKiem(txtTKTenSP.Text, txtTKNCC.Text);
-        }
+        //private void timKiem(object sender, EventArgs e)
+        //{
+        //    sp.timKiem(txtTKTenSP.Text, txtTKNCC.Text);
+        //}
 
         private void Sanpham_Load_1(object sender, EventArgs e)
         {
             sp.ViewAll();
+        }
+
+        private void txtTKTenSP_TextChanged(object sender, EventArgs e)
+        {
+            sp.timKiem(txtTKTenSP.Text, txtTKNCC.Text);
+        }
+
+        private void txtTKNCC_TextChanged(object sender, EventArgs e)
+        {
+            sp.timKiem(txtNCC.Text, txtTKNCC.Text);
         }
     }
 }
