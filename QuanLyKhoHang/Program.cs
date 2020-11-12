@@ -17,7 +17,7 @@ namespace QuanlyKhohang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QLKhohang());
+            Application.Run(new Dangnhap());
         }
     }
 }
