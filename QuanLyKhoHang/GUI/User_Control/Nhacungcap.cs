@@ -154,11 +154,10 @@ namespace QuanlyKhohang.GUI
             }
         }
         #endregion
-        private void Text_Changed(object sender, EventArgs e)
+        private void txtTKTenNCC_TextChanged(object sender, EventArgs e)
         {
             ncc.timKiem(txtTKTenNCC.Text, txtTKDiachi.Text);
         }
-
 
     }
 }
