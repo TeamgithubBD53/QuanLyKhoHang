@@ -231,7 +231,7 @@
             this.txtTKNCC.Name = "txtTKNCC";
             this.txtTKNCC.Size = new System.Drawing.Size(143, 24);
             this.txtTKNCC.TabIndex = 8;
-            this.txtTKNCC.TextChanged += new System.EventHandler(this.txtTKNCC_TextChanged);
+            this.txtTKNCC.TextChanged += new System.EventHandler(this.txtTKTenSP_TextChanged);
             // 
             // label9
             // 

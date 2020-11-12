@@ -173,9 +173,6 @@ namespace QuanlyKhohang.GUI
             sp.timKiem(txtTKTenSP.Text, txtTKNCC.Text);
         }
 
-        private void txtTKNCC_TextChanged(object sender, EventArgs e)
-        {
-            sp.timKiem(txtNCC.Text, txtTKNCC.Text);
-        }
+
     }
 }
