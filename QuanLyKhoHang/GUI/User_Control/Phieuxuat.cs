@@ -16,20 +16,16 @@ namespace QuanlyKhohang.GUI
     public partial class Phieuxuat : UserControl
     {
         Phieuxuat_BUS px = new Phieuxuat_BUS();
-
         public Phieuxuat()
         {
             InitializeComponent();
             px.bangDuLieu = dataGridView1;
-
         }
-
-        private void Phieuxuat_Load(object sender, EventArgs e)
+        private void Phieuxuat_Load_1(object sender, EventArgs e)
         {
             px.ViewAll();
         }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtPXID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtKH.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -41,13 +37,13 @@ namespace QuanlyKhohang.GUI
             txtNVID.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
         }
 
+        #region Get Infomation
         public void GetValueKH(string id, string name)
         {
             txtKH.Text = name;
             txtKHID.Text = id;
         }
-
-        private void btnKH_Click(object sender, EventArgs e)
+        private void btnKH_Click_1(object sender, EventArgs e)
         {
             Form_KH KH = new Form_KH();
             KH.Getmydata = new Form_KH.GetData(GetValueKH);
@@ -58,15 +54,16 @@ namespace QuanlyKhohang.GUI
             txtNhanvien.Text = name;
             txtNVID.Text = id;
         }
-
-        private void btnNhanvien_Click(object sender, EventArgs e)
+        private void btnNhanvien_Click_1(object sender, EventArgs e)
         {
             Form_NV nv = new Form_NV();
             nv.Getmydata = new Form_NV.GetData(GetValueNV);
             nv.ShowDialog();
         }
+        #endregion
 
-        private void btnChitietPX_Click(object sender, EventArgs e)
+        #region Details
+        private void btnChitietPN_Click(object sender, EventArgs e)
         {
             if (txtPXID.Text == "")
                 MessageBox.Show("Chọn một phiếu xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -77,8 +74,9 @@ namespace QuanlyKhohang.GUI
                 ctx.ShowDialog();
             }
         }
+        #endregion
 
-
+        #region Handle button
         int luu = 0;
         public void ResetText1()
         {
@@ -90,7 +88,6 @@ namespace QuanlyKhohang.GUI
                 item.ResetText();
             txtKH.Focus();
         }
-
         public void Start()
         {
             ResetText1();
@@ -105,8 +102,7 @@ namespace QuanlyKhohang.GUI
             txtTKNhanvien.Enabled = true;
             txtTKTenKH.Enabled = true;
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             luu = 1;
             btnThem.Enabled = false;
@@ -120,7 +116,7 @@ namespace QuanlyKhohang.GUI
             txtTKTenKH.Enabled = false;
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
             luu = 2;
             txtNhanvien.Focus();
@@ -134,7 +130,7 @@ namespace QuanlyKhohang.GUI
             txtTKTenKH.Enabled = false;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             luu = 0;
             int res = px.Del(int.Parse(txtPXID.Text));
@@ -154,7 +150,7 @@ namespace QuanlyKhohang.GUI
             }
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
             if (luu == 1)
             {
@@ -182,15 +178,30 @@ namespace QuanlyKhohang.GUI
             }
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void btnHuy_Click_1(object sender, EventArgs e)
         {
             Start();
         }
 
+        #endregion
         private void txtTKTenKH_TextChanged(object sender, EventArgs e)
         {
             px.timKiem(txtTKTenKH.Text, txtTKNhanvien.Text);
+        }
 
+
+
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtPXID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtKH.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtNhanvien.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            dtPNgayxuat.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtTongsoluong.Text = DataAccess.Query("select * from GetAmount1(" + txtPXID.Text + ")").Rows[0][0].ToString();
+            txtTongtien.Text = DataAccess.Query("select * from GetTotal1(" + txtPXID.Text + ")").Rows[0][0].ToString();
+            txtKHID.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtNVID.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
         }
     }
 }

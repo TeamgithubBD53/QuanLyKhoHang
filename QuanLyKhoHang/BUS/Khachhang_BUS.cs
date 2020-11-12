@@ -43,5 +43,22 @@ namespace QuanlyKhohang.BUS
                 new SqlParameter("@dienthoai", dienthoai),
                 new SqlParameter("@email", email));
         }
+
+        public void Update(int id, string ten, string diachi, string dienthoai, string email)
+        {
+            DataAccess.NonQuery("Khachhang_update",
+                new SqlParameter("@khid", id),
+                new SqlParameter("@ten", ten),
+                new SqlParameter("@diachi", diachi),
+                new SqlParameter("@dienthoai", dienthoai),
+                new SqlParameter("@email", email));
+        }
+        public int Delete(int id)
+        {
+            DataTable dt = DataAccess.Query("Khachhang_delete",
+                new SqlParameter("@khid", id));
+            int res = int.Parse(dt.Rows[0][0].ToString());
+            return res;
+        }
     }
 }
