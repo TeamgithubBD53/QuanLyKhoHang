@@ -63,5 +63,39 @@ namespace QuanlyKhohang.GUI
         }
 
         #endregion
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            luu = 1;
+            btnThem.Enabled = false;
+            btnThem.BackColor = Color.LightBlue;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            ResetText1();
+            txtTKDiachi.Enabled = false;
+            txtTKTenKH.Enabled = false;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (txtKHID.Text == "")
+                MessageBox.Show("Chọn một sản phẩm để sửa.", "Lỗi");
+            else
+            {
+                luu = 2;
+                txtTenKH.Focus();
+                btnSua.BackColor = Color.LightBlue;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                btnThem.Enabled = false;
+                txtTKDiachi.Enabled = false;
+                txtTKTenKH.Enabled = false;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
