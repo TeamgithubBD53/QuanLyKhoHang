@@ -244,6 +244,7 @@
             this.txtTKTenNCC.Name = "txtTKTenNCC";
             this.txtTKTenNCC.Size = new System.Drawing.Size(189, 24);
             this.txtTKTenNCC.TabIndex = 5;
+            this.txtTKTenNCC.TextChanged += new System.EventHandler(this.txtTKTenNCC_TextChanged);
             // 
             // btnXoa
             // 

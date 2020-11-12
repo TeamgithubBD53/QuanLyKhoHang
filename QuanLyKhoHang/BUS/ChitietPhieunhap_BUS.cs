@@ -55,4 +55,5 @@ namespace QuanlyKhohang.BUS
                 new SqlParameter("@spid", spid));
         }
     }
+
 }

@@ -256,6 +256,7 @@
             this.txtTKTenKH.Name = "txtTKTenKH";
             this.txtTKTenKH.Size = new System.Drawing.Size(143, 24);
             this.txtTKTenKH.TabIndex = 5;
+            this.txtTKTenKH.TextChanged += new System.EventHandler(this.txtTKTenKH_TextChanged);
             // 
             // groupBox3
             // 

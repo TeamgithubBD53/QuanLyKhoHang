@@ -2,6 +2,7 @@
 using System.Data;
 using QuanlyKhohang.DataLayer;
 using System.Data.SqlClient;
+using System;
 
 namespace QuanlyKhohang.BUS
 {

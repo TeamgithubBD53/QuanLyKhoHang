@@ -28,14 +28,19 @@ namespace QuanlyKhohang.GUI
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtPNID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtNCC.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtNhanvien.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            dtPNgaynhap.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtTongsoluong.Text = DataAccess.Query("select * from GetAmount(" + txtPNID.Text + ")").Rows[0][0].ToString();
-            txtTongtien.Text = DataAccess.Query("select * from GetTotal(" + txtPNID.Text + ")").Rows[0][0].ToString();
-            txtNCCID.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtNVID.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            try
+            {
+                txtPNID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtNCC.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtNhanvien.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                dtPNgaynhap.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                txtTongsoluong.Text = DataAccess.Query("select * from GetAmount(" + txtPNID.Text + ")").Rows[0][0].ToString();
+                txtTongtien.Text = DataAccess.Query("select * from GetTotal(" + txtPNID.Text + ")").Rows[0][0].ToString();
+                txtNCCID.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txtNVID.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            }
+            catch { }
+
         }
         #region Get Infomation
         public void GetValueNCC(string id, string name)

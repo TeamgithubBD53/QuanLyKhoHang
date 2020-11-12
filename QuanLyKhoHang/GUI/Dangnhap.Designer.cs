@@ -63,12 +63,14 @@
             this.btnDangnhap.TabIndex = 3;
             this.btnDangnhap.Text = "ĐĂNG NHẬP";
             this.btnDangnhap.UseVisualStyleBackColor = true;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // txtMatkhau
             // 
             this.txtMatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatkhau.Location = new System.Drawing.Point(152, 125);
             this.txtMatkhau.Name = "txtMatkhau";
+            this.txtMatkhau.PasswordChar = '*';
             this.txtMatkhau.Size = new System.Drawing.Size(146, 26);
             this.txtMatkhau.TabIndex = 2;
             // 
