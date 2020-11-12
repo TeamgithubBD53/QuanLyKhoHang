@@ -98,6 +98,7 @@
             this.btnNhanvien.Text = "...";
             this.btnNhanvien.UseVisualStyleBackColor = true;
             this.btnNhanvien.Visible = false;
+            this.btnNhanvien.Click += new System.EventHandler(this.btnNhanvien_Click);
             // 
             // btnKH
             // 
@@ -108,6 +109,7 @@
             this.btnKH.Text = "...";
             this.btnKH.UseVisualStyleBackColor = true;
             this.btnKH.Visible = false;
+            this.btnKH.Click += new System.EventHandler(this.btnKH_Click);
             // 
             // dtPNgayxuat
             // 
@@ -155,6 +157,7 @@
             this.btnChitietPX.TabIndex = 21;
             this.btnChitietPX.Text = "Chi tiết phiếu xuất";
             this.btnChitietPX.UseVisualStyleBackColor = false;
+            
             // 
             // txtTongsoluong
             // 
@@ -276,6 +279,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(687, 298);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox2
             // 
