@@ -63,6 +63,7 @@
             this.btnDangnhap.TabIndex = 3;
             this.btnDangnhap.Text = "ĐĂNG NHẬP";
             this.btnDangnhap.UseVisualStyleBackColor = true;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // txtMatkhau
             // 
