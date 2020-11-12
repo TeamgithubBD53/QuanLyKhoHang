@@ -63,7 +63,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(693, 26);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(143, 24);
+            this.txtEmail.Size = new System.Drawing.Size(224, 24);
             this.txtEmail.TabIndex = 12;
             // 
             // email
@@ -90,6 +90,7 @@
             this.txtDienthoai.Name = "txtDienthoai";
             this.txtDienthoai.Size = new System.Drawing.Size(143, 24);
             this.txtDienthoai.TabIndex = 8;
+            this.txtDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienthoai_KeyPress);
             // 
             // label5
             // 
@@ -250,7 +251,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(5, 145);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(861, 63);
+            this.groupBox2.Size = new System.Drawing.Size(934, 63);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -261,6 +262,7 @@
             this.txtTKTenKH.Name = "txtTKTenKH";
             this.txtTKTenKH.Size = new System.Drawing.Size(143, 24);
             this.txtTKTenKH.TabIndex = 5;
+            this.txtTKTenKH.TextChanged += new System.EventHandler(this.txtTKTenKH_TextChanged);
             // 
             // groupBox1
             // 
@@ -279,7 +281,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(861, 137);
+            this.groupBox1.Size = new System.Drawing.Size(937, 137);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
@@ -294,6 +296,7 @@
             this.btnHuy.TabIndex = 19;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -305,6 +308,7 @@
             this.btnLuu.TabIndex = 20;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // Khachhang
             // 
@@ -321,7 +325,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Khachhang";
-            this.Size = new System.Drawing.Size(869, 541);
+            this.Size = new System.Drawing.Size(974, 541);
             this.Load += new System.EventHandler(this.Khachhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);

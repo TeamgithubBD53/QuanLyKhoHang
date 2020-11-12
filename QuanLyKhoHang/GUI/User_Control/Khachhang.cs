@@ -95,7 +95,68 @@ namespace QuanlyKhohang.GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            luu = 0;
+            int res = kh.Delete(int.Parse(txtKHID.Text));
+            if (txtKHID.Text == "")
+                MessageBox.Show("Chọn một khách hàng để xóa.", "Lỗi");
+            else if (res == 1)
+                MessageBox.Show("Khách hàng đã từng thực hiện giao dịch không thể xóa.", "Lỗi");
+            else
+            {
+                DialogResult dr;
+                dr = MessageBox.Show("Xóa dữ liệu khách hàng", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
+                {
+                    kh.Delete(int.Parse(txtKHID.Text));
+                    MessageBox.Show("Xóa thành công");
+                    kh.ViewAll();
+                }
+            }
+        }
 
+        private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Start();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (luu == 1)
+            {
+                txtKHID.ResetText();
+                if (txtTenKH.Text == "" | txtDiachi.Text == "" | txtDienthoai.Text == "" | txtEmail.Text == "")
+                    MessageBox.Show("Nhập đầy đủ thông tin khách hàng.", "Lỗi");
+                else
+                {
+                    kh.Add(txtTenKH.Text, txtDiachi.Text, txtDienthoai.Text, txtEmail.Text);
+                    MessageBox.Show("Thêm thành công");
+                    kh.ViewAll();
+                    Start();
+                }
+            }
+            else if (luu == 2)
+            {
+                if (txtTenKH.Text == "" | txtDiachi.Text == "" | txtDienthoai.Text == "" | txtEmail.Text == "")
+                    MessageBox.Show("Nhập đầy đủ thông tin sản phẩm.", "Lỗi");
+                else
+                {
+                    kh.Update(int.Parse(txtKHID.Text), txtTenKH.Text, txtDiachi.Text, txtDienthoai.Text, txtEmail.Text);
+                    MessageBox.Show("Sửa thành công");
+                    kh.ViewAll();
+                    Start();
+                }
+            }
+        }
+
+        private void txtTKTenKH_TextChanged(object sender, EventArgs e)
+        {
+            kh.timKiem(txtTKTenKH.Text, txtTKDiachi.Text);
         }
     }
 }
