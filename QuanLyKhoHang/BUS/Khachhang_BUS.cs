@@ -17,6 +17,7 @@ namespace QuanlyKhohang.BUS
         public DataView dv { get; set; }
         #endregion
 
+        //hien thi thong tin chi tiet cua kh
         public void ViewAll()
         {
             string sql = string.Format("select * from Khachhang");
@@ -30,11 +31,14 @@ namespace QuanlyKhohang.BUS
             bangDuLieu.Columns[4].HeaderText = "Email";
         }
 
+        //Loc ket qua tim kiem trong csdl
         public void timKiem(string tenkh, string diachi)
         {
             dv.RowFilter = "[TenKH] like '%" + tenkh + "%' and [Diachi] like '%" + diachi + "%'";
             bangDuLieu.DataSource = dv;
         }
+
+        //Them kh moi
         public void Add(string ten,string diachi,string dienthoai,string email)
         {
             DataAccess.NonQuery("Khachhang_insert",
@@ -44,6 +48,7 @@ namespace QuanlyKhohang.BUS
                 new SqlParameter("@email", email));
         }
 
+        //Sua thong tin kh
         public void Update(int id, string ten, string diachi, string dienthoai, string email)
         {
             DataAccess.NonQuery("Khachhang_update",
@@ -53,6 +58,8 @@ namespace QuanlyKhohang.BUS
                 new SqlParameter("@dienthoai", dienthoai),
                 new SqlParameter("@email", email));
         }
+
+        //Xoa kh da co theo id
         public int Delete(int id)
         {
             DataTable dt = DataAccess.Query("Khachhang_delete",
