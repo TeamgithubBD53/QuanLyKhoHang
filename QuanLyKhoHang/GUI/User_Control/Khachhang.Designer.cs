@@ -221,6 +221,7 @@
             this.txtTKDiachi.Name = "txtTKDiachi";
             this.txtTKDiachi.Size = new System.Drawing.Size(143, 24);
             this.txtTKDiachi.TabIndex = 7;
+            this.txtTKDiachi.TextChanged += new System.EventHandler(this.txtTKTenKH_TextChanged);
             // 
             // label8
             // 

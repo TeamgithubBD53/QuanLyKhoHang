@@ -25,6 +25,7 @@ namespace QuanlyKhohang.GUI
 
         }
 
+        //load tu csdl hien thi len datagridview
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -35,6 +36,7 @@ namespace QuanlyKhohang.GUI
         public delegate void GetData(string id, string name);
 
         public GetData Getmydata;
+        
         private void btn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
