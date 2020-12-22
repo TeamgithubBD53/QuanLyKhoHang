@@ -36,7 +36,7 @@ namespace QuanlyKhohang.GUI
         }
 
         #region Handle button
-        int luu = 0;
+        int luu = 0;        //luu = 1 them, luu = 2 sua, luu = 0 bat dau va xoa
         public void ResetText1()
         {
             List<TextBox> lst = new List<TextBox>()
@@ -96,22 +96,27 @@ namespace QuanlyKhohang.GUI
         private void btnXoa_Click(object sender, EventArgs e)
         {
             luu = 0;
-            int res = kh.Delete(int.Parse(txtKHID.Text));
+            
             if (txtKHID.Text == "")
                 MessageBox.Show("Chọn một khách hàng để xóa.", "Lỗi");
-            else if (res == 1)
-                MessageBox.Show("Khách hàng đã từng thực hiện giao dịch không thể xóa.", "Lỗi");
             else
             {
-                DialogResult dr;
-                dr = MessageBox.Show("Xóa dữ liệu khách hàng", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (dr == DialogResult.OK)
+                int res = kh.Delete(int.Parse(txtKHID.Text));
+                if (res == 1)
+                    MessageBox.Show("Khách hàng đã từng thực hiện giao dịch không thể xóa.", "Lỗi");
+                else
                 {
-                    kh.Delete(int.Parse(txtKHID.Text));
-                    MessageBox.Show("Xóa thành công");
-                    kh.ViewAll();
+                    DialogResult dr;
+                    dr = MessageBox.Show("Xóa dữ liệu khách hàng", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.OK)
+                    {
+                        kh.Delete(int.Parse(txtKHID.Text));
+                        MessageBox.Show("Xóa thành công");
+                        kh.ViewAll();
+                    }
                 }
             }
+            
         }
 
         private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
