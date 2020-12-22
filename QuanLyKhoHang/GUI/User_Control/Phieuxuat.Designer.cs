@@ -312,6 +312,7 @@
             this.txtTKNhanvien.Name = "txtTKNhanvien";
             this.txtTKNhanvien.Size = new System.Drawing.Size(143, 24);
             this.txtTKNhanvien.TabIndex = 7;
+            this.txtTKNhanvien.TextChanged += new System.EventHandler(this.txtTKTenKH_TextChanged);
             // 
             // label8
             // 
