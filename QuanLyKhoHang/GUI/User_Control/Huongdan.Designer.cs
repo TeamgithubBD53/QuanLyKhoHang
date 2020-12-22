@@ -73,6 +73,7 @@
             treeNode5});
             this.treeView1.Size = new System.Drawing.Size(198, 512);
             this.treeView1.TabIndex = 2;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // groupBox1
             // 
